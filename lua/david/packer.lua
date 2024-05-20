@@ -8,11 +8,20 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+      'nvim-telescope/telescope.nvim', tag = '0.1.6',
+      -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use('theprimeagen/harpoon')
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional
+      },
+  }
+  use('tpope/vim-commentary')
 
+  -- Color scheme & LSP
   use({
 	  'rebelot/kanagawa.nvim',
 	  as = 'kanagawa',
@@ -22,7 +31,6 @@ return require('packer').startup(function(use)
   })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('theprimeagen/harpoon')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
