@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
       },
   }
   use('tpope/vim-commentary')
+  use('tpope/vim-surround')
 
   -- Color scheme & LSP
   use({
